@@ -9,7 +9,5 @@ API to run code online using api
 4. Java
 5. Python
 6. Python3
-7. PHP
+7. Nodejs
 8. Ruby
-9. Javascript
-10. Clojure
