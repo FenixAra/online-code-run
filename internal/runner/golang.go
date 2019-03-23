@@ -20,20 +20,20 @@ func NewGoRunner() *GoRunner {
 
 func (g *GoRunner) Run(req *dtos.APIReq) *dtos.APIRes {
 	res := &dtos.APIRes{}
-	err := os.MkdirAll("/tmp/ocr/"+req.ID, os.ModePerm)
+	p := "/tmp/ocr/" + req.ID
+	err := os.MkdirAll(p, os.ModePerm)
 	if err != nil {
 		res.Error = err.Error()
 		return res
 	}
 
-	p := "/tmp/ocr/" + req.ID + "/main.go"
-	err = ioutil.WriteFile(p, []byte(req.Source), 0644)
+	err = ioutil.WriteFile(p+"/"+req.Name, []byte(req.Source), 0644)
 	if err != nil {
 		res.Error = err.Error()
 		return res
 	}
 
-	cmd := exec.Command("go", "run", p)
+	cmd := exec.Command("go", "run", p+"/"+req.Name)
 	stdin, err := cmd.StdinPipe()
 	if err != nil {
 		res.Error = err.Error()
@@ -47,7 +47,7 @@ func (g *GoRunner) Run(req *dtos.APIReq) *dtos.APIRes {
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		if _, ok := err.(*exec.ExitError); ok {
-			errs := strings.Replace(string(out), p, req.Name, -1)
+			errs := strings.Replace(string(out), p+"/"+req.Name, req.Name, -1)
 			errs = strings.Replace(errs, "# command-line-arguments\n", "", 1)
 
 			res.Error = errs
@@ -61,7 +61,12 @@ func (g *GoRunner) Run(req *dtos.APIReq) *dtos.APIRes {
 	res.Status = true
 	res.Output = string(out)
 	res.TimeTaken = time.Since(t).Seconds()
-	os.RemoveAll(p)
+	err = os.RemoveAll(p)
+	if err != nil {
+		res.Error = err.Error()
+		return res
+	}
+
 	return res
 }
 
