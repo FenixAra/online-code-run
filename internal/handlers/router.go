@@ -13,6 +13,7 @@ func New() http.Handler {
 	router.PanicHandler = PanicHandler
 
 	router.GET("/api/v1/languages", GetLanguages)
+	router.POST("/api/v1/run", CompileAndRunCode)
 
 	return router
 }
