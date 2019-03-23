@@ -16,6 +16,8 @@ func New(lang string) Runner {
 		return NewGoRunner()
 	case config.Java:
 		return NewJavaRunner()
+	case config.C:
+		return NewCRunner()
 	default:
 		return nil
 	}
