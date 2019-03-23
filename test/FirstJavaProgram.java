@@ -1,5 +1,11 @@
+import java.util.Scanner;
+
 public class FirstJavaProgram {
   public static void main(String[] args){
-    System.out.println("This is my first program in java");
-  }//End of main
-}//End of FirstJavaProgram Class
+    Scanner in = new Scanner(System.in);
+    String s = in.nextLine();
+    String s2 = in.nextLine();
+    System.out.println(s);
+    System.out.println(s2);
+  }
+}

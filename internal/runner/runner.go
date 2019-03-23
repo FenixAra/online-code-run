@@ -14,6 +14,8 @@ func New(lang string) Runner {
 	switch lang {
 	case config.Golang:
 		return NewGoRunner()
+	case config.Java:
+		return NewJavaRunner()
 	default:
 		return nil
 	}

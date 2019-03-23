@@ -2,7 +2,9 @@
 
 int main()
 {
-   // printf() displays the string inside quotation
-   printf("Hello, World!");
+   int a,b;
+   scanf("%d",&a);
+   scanf("%d",&b);
+   printf("%d\n%d",a,b);
    return 0;
 }
