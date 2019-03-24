@@ -20,6 +20,10 @@ func New(lang string) Runner {
 		return NewCRunner()
 	case config.CPP:
 		return NewCPPRunner()
+	case config.Python:
+		return NewPythonRunner()
+	case config.Python3:
+		return NewPython3Runner()
 	default:
 		return nil
 	}
