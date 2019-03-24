@@ -18,7 +18,7 @@ func NewCRunner() *CRunner {
 	return &CRunner{}
 }
 
-func (g *CRunner) Run(req *dtos.APIReq) *dtos.APIRes {
+func (c *CRunner) Run(req *dtos.APIReq) *dtos.APIRes {
 	res := &dtos.APIRes{}
 	p := "/tmp/ocr/" + req.ID
 	err := os.MkdirAll(p, os.ModePerm)
@@ -78,6 +78,6 @@ func (g *CRunner) Run(req *dtos.APIReq) *dtos.APIRes {
 	return res
 }
 
-func (g *CRunner) Compile(req *dtos.APIReq) *dtos.APIRes {
+func (c *CRunner) Compile(req *dtos.APIReq) *dtos.APIRes {
 	return nil
 }

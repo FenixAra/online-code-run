@@ -18,6 +18,8 @@ func New(lang string) Runner {
 		return NewJavaRunner()
 	case config.C:
 		return NewCRunner()
+	case config.CPP:
+		return NewCPPRunner()
 	default:
 		return nil
 	}
