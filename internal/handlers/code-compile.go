@@ -10,7 +10,7 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func GetLanguages(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func GetLanguages(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	w.Header().Add("X-Content-Type-Options", "nosniff")
 	w.Header().Add("X-Frame-Options", "DENY")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -29,7 +29,7 @@ func GetLanguages(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 	w.Write(response)
 }
 
-func CompileCode(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func CompileCode(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 }
 

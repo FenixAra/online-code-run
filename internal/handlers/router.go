@@ -14,8 +14,13 @@ func New() http.Handler {
 
 	router.GET("/api/v1/languages", GetLanguages)
 	router.POST("/api/v1/run", CompileAndRunCode)
+	router.GET("/ping", Ping)
 
 	return router
+}
+
+func Ping(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	w.Write([]byte("pong"))
 }
 
 func PanicHandler(w http.ResponseWriter, r *http.Request, c interface{}) {
