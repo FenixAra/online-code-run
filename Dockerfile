@@ -8,6 +8,6 @@ ENV GOPATH /home
 
 RUN go install github.com/FenixAra/online-code-run
 
-ENTRYPOINT /go/bin/online-code-run
+ENTRYPOINT /home/bin/online-code-run
 
 EXPOSE 3000

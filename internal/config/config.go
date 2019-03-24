@@ -33,7 +33,7 @@ func init() {
 
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs := strings.Split(string(out), " ")
@@ -46,7 +46,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -59,7 +59,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -73,7 +73,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -87,7 +87,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -101,7 +101,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -115,7 +115,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
@@ -129,7 +129,7 @@ func init() {
 
 	out, err = cmd.CombinedOutput()
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	strs = strings.Split(string(out), " ")
