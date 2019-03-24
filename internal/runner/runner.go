@@ -24,6 +24,8 @@ func New(lang string) Runner {
 		return NewPythonRunner()
 	case config.Python3:
 		return NewPython3Runner()
+	case config.Nodejs:
+		return NewNodejsRunner()
 	default:
 		return nil
 	}
